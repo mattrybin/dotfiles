@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+# Git
+gc() {
+    if [ $# -eq 0 ]; then
+        git checkout -q master
+        echo "Switched to master"
+    else
+        git checkout -t -b $@
+        echo "Created branch: $1"
+    fi
+}
+
+alias gl="git --no-pager log --graph --abbrev-commit --decorate --oneline"
